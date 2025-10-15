@@ -59,14 +59,14 @@ python train.py \
 
 ## 5. Text-to-Image Person Retrieval Results
 #### CUHK-PEDES dataset
-![示例图片](image/CUHK-PEDES.png)
-[Model for CUHK-PEDES](https://drive.google.com/drive/folders/189OvVPHTEeMLbNFJFvTtFWjjBtkTxetS?usp=sharing)
+![示例图片](image/CUHK-PEDES.png)[Model for RSTPReid](https://drive.google.com/file/d/1OBhFhpZpltRMZ88K6ceNUv4vZgevsFCW/view?usp=share_link)
+
 #### ICFG-PEDES dataset
-![示例图片](image/ICFG-PEDES.png)
-[Model for ICFG-PEDES](https://drive.google.com/drive/folders/1XWVZjdou8gONb5Eg9cqU5DwZhZo_kbLW?usp=sharing)
+![示例图片](image/ICFG-PEDES.png)[Model for ICFG-PEDES](https://drive.google.com/drive/folders/1XWVZjdou8gONb5Eg9cqU5DwZhZo_kbLW?usp=sharing)
+
 #### RSTPReid dataset
-![示例图片](image/RSTPReid.png)
-[Model for RSTPReid](https://drive.google.com/file/d/1OBhFhpZpltRMZ88K6ceNUv4vZgevsFCW/view?usp=share_link)
+![示例图片](image/RSTPReid.png)[Model for RSTPReid](https://drive.google.com/file/d/1OBhFhpZpltRMZ88K6ceNUv4vZgevsFCW/view?usp=share_link)
+
 
 ## 6. Acknowledgments
 Some components of this code implementation are adopted from [CLIP](https://github.com/openai/CLIP)
