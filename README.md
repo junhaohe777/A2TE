@@ -58,7 +58,7 @@ python train.py \
 ```
 
 ## 5. Text-to-Image Person Retrieval Results
-#### CUHK-PEDES dataset -- [Model for RSTPReid](https://drive.google.com/drive/folders/189OvVPHTEeMLbNFJFvTtFWjjBtkTxetS?usp=sharing)
+#### CUHK-PEDES dataset -- [Model for CUHK-PEDES](https://drive.google.com/drive/folders/189OvVPHTEeMLbNFJFvTtFWjjBtkTxetS?usp=sharing)
 ![示例图片](image/CUHK-PEDES.png)
 
 #### ICFG-PEDES dataset -- [Model for ICFG-PEDES](https://drive.google.com/drive/folders/1XWVZjdou8gONb5Eg9cqU5DwZhZo_kbLW?usp=sharing)
