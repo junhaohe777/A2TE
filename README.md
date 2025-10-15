@@ -70,7 +70,7 @@ python train.py \
 #### If you use this project's code,please cite our paper:
 ```bibtex
 @article{xxx_2025_A2TE
-  title={A\textsuperscript{2}TE: Enhancing Detail Awareness for Text-Based Person Search via Attribute Assistance and Token Exploitation},
+  title={A2TE: Enhancing Detail Awareness for Text-Based Person Search via Attribute Assistance and Token Exploitation},
   author={xxx},
   journal={xxx},
   volume={xx},
