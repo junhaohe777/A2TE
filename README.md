@@ -1,7 +1,7 @@
-# A\textsuperscript{2}TE: Enhancing Detail Awareness for Text-Based Person Search via Attribute Assistance and Token Exploitation
+# A2TE: Enhancing Detail Awareness for Text-Based Person Search via Attribute Assistance and Token Exploitation
 ### We sincerely appreciate your interest and support. The README will be further improved after acceptance.
 ## 1. Progect Overview
-Text-based person search (TBPS) aims to retrieve pedestrian images from a large gallery using natural language descriptions. However, existing methods often overlook fine-grained details and local attribute cues, resulting in suboptimal cross-modal alignment and limited retrieval accuracy. To address these challenges, we propose A\textsuperscript{2}TE, a novel framework designed to enhance fine-grained perception in TBPS. Specifically, we introduce two complementary modules. The Attribute-Assisted Masking (A2M) module leverages masked language modeling to capture cross-modal contextual dependencies, while attribute token masking guides the multimodal interaction encoder to attend to discriminative local attributes. In parallel, the Detail-Aware Layer (DAL) exploits attention maps to identify and preserve tokens that convey fine-grained semantic information, thereby improving local discriminability. Together, these modules align visual and textual representations within a shared embedding space, substantially enhancing the model’s detail-awareness. Extensive experiments on three public benchmark datasets demonstrate that A\textsuperscript{2}TE consistently outperforms state-of-the-art methods in both fine-grained detail perception and retrieval performance.
+Text-based person search (TBPS) aims to retrieve pedestrian images from a large gallery using natural language descriptions. However, existing methods often overlook fine-grained details and local attribute cues, resulting in suboptimal cross-modal alignment and limited retrieval accuracy. To address these challenges, we propose A2TE, a novel framework designed to enhance fine-grained perception in TBPS. Specifically, we introduce two complementary modules. The Attribute-Assisted Masking (A2M) module leverages masked language modeling to capture cross-modal contextual dependencies, while attribute token masking guides the multimodal interaction encoder to attend to discriminative local attributes. In parallel, the Detail-Aware Layer (DAL) exploits attention maps to identify and preserve tokens that convey fine-grained semantic information, thereby improving local discriminability. Together, these modules align visual and textual representations within a shared embedding space, substantially enhancing the model’s detail-awareness. Extensive experiments on three public benchmark datasets demonstrate that A2TE consistently outperforms state-of-the-art methods in both fine-grained detail perception and retrieval performance.
 ## 2. Framework
 ![示例图片](image/framework.jpg)
 ## 3. Environment Setup
@@ -20,7 +20,6 @@ Nvidia L40 GPU with 48.00 GB
 ```bash
 git clone [https://github.com/junhaohe777/A2TE.git]
 ```
-
 ### Prepare Datasets
 Download the CUHK-PEDES dataset from [here](https://github.com/ShuangLI59/Person-Search-with-Natural-Language-Description), ICFG-PEDES dataset from [here](https://github.com/zifyloo/SSAN) and RSTPReid dataset form [here](https://github.com/NjtechCVLab/RSTPReid-Dataset)
 
