@@ -65,8 +65,10 @@ python train.py \
 #### RSTPReid dataset
 ![示例图片](image/RSTPReid.png)
 
+## 6. Acknowledgments
+Some components of this code implementation are adopted from [CLIP](https://github.com/openai/CLIP)
 
-## 6. Citation
+## 7. Citation
 #### If you use this project's code,please cite our paper:
 ```bibtex
 @article{xxx_2025_A2TE
@@ -79,5 +81,5 @@ python train.py \
   year={2025}
 }
 ```
-## 7. Contact Information
+## 8. Contact Information
 - **Email**: 2817881079@qq.com or chengfangzhang@scpolicec.edu.cn
