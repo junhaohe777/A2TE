@@ -69,7 +69,7 @@ python train.py \
 
 
 ## 6. Acknowledgments
-Some components of this code implementation are adopted from [CLIP](https://github.com/openai/CLIP)
+The code is based on [IRRA](https://github.com/anosorae/IRRA) licensed under Apache 2.0.
 
 ## 7. Citation
 #### If you use this project's code,please cite our paper:
