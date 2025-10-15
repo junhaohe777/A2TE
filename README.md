@@ -18,7 +18,7 @@ Nvidia L40 GPU with 48.00 GB
 ## 4. Installation and Usage
 ### Clone the repository
 ```bash
-git clone [https://github.com/junhaohe777/A2TE.git]
+git clone https://github.com/junhaohe777/A2TE.git
 ```
 ### Prepare Datasets
 Download the CUHK-PEDES dataset from [here](https://github.com/ShuangLI59/Person-Search-with-Natural-Language-Description), ICFG-PEDES dataset from [here](https://github.com/zifyloo/SSAN) and RSTPReid dataset form [here](https://github.com/NjtechCVLab/RSTPReid-Dataset)
@@ -64,7 +64,7 @@ python train.py \
 #### ICFG-PEDES dataset -- [Model for ICFG-PEDES](https://drive.google.com/drive/folders/1XWVZjdou8gONb5Eg9cqU5DwZhZo_kbLW?usp=sharing)
 ![示例图片](image/ICFG-PEDES.png)
 
-#### RSTPReid dataset -- [Model for RSTPReid](https://drive.google.com/file/d/1OBhFhpZpltRMZ88K6ceNUv4vZgevsFCW/view?usp=share_link)
+#### RSTPReid dataset -- [Model for RSTPReid](https://drive.google.com/drive/folders/1-PLgCTqyK6tzZXPbLFiM1J6vJhNIv3g4?usp=sharing)
 ![示例图片](image/RSTPReid.png)
 
 
