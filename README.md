@@ -6,13 +6,10 @@ Text-based person search (TBPS) aims to retrieve pedestrian images from a large 
 ![示例图片](image/framework.jpg)
 
 ## Key algorithm
-**Attribute-Assisted Masking (A2M) module:** |The module implicitly learns the correspondence between textual attributes and visual regions, enhancing the model’s sensitivity to fine-grained cues.  
-
-**Detail-Aware Layer (DAL) module:** The module fully exploits all token embeddings from large-scale vision–language models, enabling more precise and fine-grained alignment between pedestrian images and textual descriptions.  
-
-**Freezing Strategy:** Freezing the CLIP convolutional layer as a fixed visual tokenizer, which stabilizes multi-loss optimization, preserves low-level priors, and improves convergence and generalization.  
-
-
+    **Attribute-Assisted Masking (A2M) module:** |The module implicitly learns the correspondence between textual attributes and visual regions, enhancing the model’s sensitivity to fine-grained cues.  
+    **Detail-Aware Layer (DAL) module:** The module fully exploits all token embeddings from large-scale vision–language models, enabling more precise and fine-grained alignment between pedestrian images and    textual descriptions.  
+    **Freezing Strategy:** Freezing the CLIP convolutional layer as a fixed visual tokenizer, which stabilizes multi-loss optimization, preserves low-level priors, and improves convergence and generalization.  
+    
 ## Environment Setup
 ### Sofware Dependencies
 ```
