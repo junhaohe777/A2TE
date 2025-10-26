@@ -1,5 +1,5 @@
 # A2TE: Enhancing Detail Awareness for Text-Based Person Search via Attribute Assistance and Token Exploitation
-### The paper has been submitted to The Visual Computer. We sincerely appreciate your interest and support. The README will be further improved after acceptance.
+### The paper has been submitted to Multimedia Systems. We sincerely appreciate your interest and support. The README will be further improved after acceptance.
 ## 1. Progect Overview
 Text-based person search (TBPS) aims to retrieve pedestrian images from a large gallery using natural language descriptions. Although recent advances have led to notable improvements in retrieval performance, TBPS models still suffer from limited accuracy and suboptimal cross-modal alignment, as they often overlook fine-grained and discriminative details. To address these challenges, we propose Attribute Assistance and Token Exploitation (A\textsuperscript{2}TE), a novel approach to enhance detail awareness in TBPS. Specifically, the Attribute Assistance principle is embodied in the Attribute-Assisted Masking (A2M) module, which captures cross-modal contextual dependencies and guides the encoder to attend to discriminative local attributes. Meanwhile, the Token Exploitation principle is realized through the Detail-Aware Layer (DAL), which leverages attention maps to preserve fine-grained semantic cues and enhance locsal discriminability. The two modules jointly align visual and textual representations within a shared embedding space, substantially enhancing the model’s detail awareness. Experiments on three public benchmark datasets demonstrate that A\textsuperscript{2}TE consistently outperforms state-of-the-art methods in both fine-grained detail perception and retrieval performance.
 ## 2. Framework
@@ -85,7 +85,7 @@ The code is based on [IRRA](https://github.com/anosorae/IRRA) licensed under Apa
 @article{He_2025_A2TE
   title={A2TE: Enhancing Detail Awareness for Text-Based Person Search via Attribute Assistance and Token Exploitation},
   author={He, Junhao and Zhang, Chengfang and Feng, Ziliang},
-  journal={The Visual Computer},
+  journal={Multimedia Systems},
   year={2025}
 }
 ```
