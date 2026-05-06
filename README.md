@@ -82,11 +82,11 @@ The code is based on [IRRA](https://github.com/anosorae/IRRA) licensed under Apa
 ## 8. Citation
 #### If you use this project's code,please cite our paper:
 ```bibtex
-@article{He_2025_A2TE
+@article{He_2026_A2TE
   title={A2TE: Enhancing Detail Awareness for Text-Based Person Search via Attribute Assistance and Token Exploitation},
   author={He, Junhao and Zhang, Chengfang and Feng, Ziliang},
   journal={xxx},
-  year={2025}
+  year={2026}
 }
 ```
 ## 9. Contact Information
