@@ -71,83 +71,12 @@ def tokenize(caption: str, tokenizer, text_length=77, truncate=True) -> torch.Lo
     return result
 
 
-# def get_attribute_mask(caption: str, tokenizer, text_length=77,max_length = 200, truncate=True):
-#     # 什么时候截断也是一个探索的地方。
-#     text = tokenizer.encode(caption)
-#     text = tokenizer.decode(text)
-#     doc = nlp(text)
-#     attribute_mask = torch.zeros(max_length)
-#     text_words=text.split()
-
-#     idx_words=0
-#     char_count=0
-
-#     count=1
-#     for chunk in doc.noun_chunks:
-#         pos=[]
-#         adj_founded=False # just to be sure
-#         for tok in chunk:
-#             if tok.pos_ == "NOUN":
-#                 # noun = tok.text
-#                 #manage she's to be split in she is
-#                 while (char_count<=tok.idx and tok.idx<=char_count+len(text_words[idx_words]))==False:
-#                     char_count+=len(text_words[idx_words])+1
-#                     idx_words+=1
-#                 pos.append(idx_words+1) # +1 to account for [CLS]
-#             if tok.pos_ == "ADJ":
-#                 adj_founded=True
-#                 while (char_count<=tok.idx and tok.idx<=char_count+len(text_words[idx_words]))==False:
-#                     char_count+=len(text_words[idx_words])+1
-#                     idx_words+=1
-#                 pos.append(idx_words+1) # +1 to account for [CLS]
-                
-#         if len(pos)>1 and adj_founded:
-#             attribute_mask[pos]=count
-#             count+=1
-
-#     bpe_attribute_mask = [attribute_mask[0].item()]
-    
-#     for idx, word in enumerate(text_words):
-#         bpe_pieces = tokenizer.bpe(word).split()
-#         if idx + 1 < len(attribute_mask):
-#             mask_value = attribute_mask[idx + 1].item()# +1 because attribute_mask[0] is CLS
-#         else:
-#             mask_value = 0  # 越界就用0填充
-#         bpe_attribute_mask.extend([mask_value] * len(bpe_pieces))
-    
-#     bpe_attribute_mask.append(0)
-    
-#     if len(bpe_attribute_mask) < text_length:
-#         pad_len = text_length - len(bpe_attribute_mask)
-#         bpe_attribute_mask.extend([0] * pad_len)
-#     else:
-#         bpe_attribute_mask = bpe_attribute_mask[:text_length]
-#         bpe_attribute_mask[-1] = 0
-
-#     bpe_attribute_mask = torch.tensor(bpe_attribute_mask)
-
-
-#     return bpe_attribute_mask
-
-def get_attribute_mask(caption: str, tokenizer, text_length=77, truncate=True):
-    sot_token = tokenizer.encoder["<|startoftext|>"]
-    eot_token = tokenizer.encoder["<|endoftext|>"]
-    text_ids = [sot_token] + tokenizer.encode(caption)
-    if len(text_ids) > text_length:
-         # 如果允许截断，则调整序列长度，确保末尾是结束令牌
-        if truncate:
-            text_ids = text_ids[:text_length]
-            text_ids[-1] = eot_token
-        else:
-             # 如果不允许截断，则抛出异常
-            raise RuntimeError(
-                f"Input {caption} is too long for context length {text_length}"
-            )
-    
-    text = tokenizer.decode(text_ids)
+def get_attribute_mask(caption: str, tokenizer, text_length=77,max_length = 200, truncate=True):
+    # 什么时候截断也是一个探索的地方。
+    text = tokenizer.encode(caption)
+    text = tokenizer.decode(text)
     doc = nlp(text)
-    attribute_mask = torch.zeros(text_length)
-    
+    attribute_mask = torch.zeros(max_length)
     text_words=text.split()
 
     idx_words=0
@@ -175,7 +104,78 @@ def get_attribute_mask(caption: str, tokenizer, text_length=77, truncate=True):
         if len(pos)>1 and adj_founded:
             attribute_mask[pos]=count
             count+=1
-    return attribute_mask
+
+    bpe_attribute_mask = [attribute_mask[0].item()]
+    
+    for idx, word in enumerate(text_words):
+        bpe_pieces = tokenizer.bpe(word).split()
+        if idx + 1 < len(attribute_mask):
+            mask_value = attribute_mask[idx + 1].item()# +1 because attribute_mask[0] is CLS
+        else:
+            mask_value = 0  # 越界就用0填充
+        bpe_attribute_mask.extend([mask_value] * len(bpe_pieces))
+    
+    bpe_attribute_mask.append(0)
+    
+    if len(bpe_attribute_mask) < text_length:
+        pad_len = text_length - len(bpe_attribute_mask)
+        bpe_attribute_mask.extend([0] * pad_len)
+    else:
+        bpe_attribute_mask = bpe_attribute_mask[:text_length]
+        bpe_attribute_mask[-1] = 0
+
+    bpe_attribute_mask = torch.tensor(bpe_attribute_mask)
+
+
+    return bpe_attribute_mask
+
+# def get_attribute_mask(caption: str, tokenizer, text_length=77, truncate=True):
+#     sot_token = tokenizer.encoder["<|startoftext|>"]
+#     eot_token = tokenizer.encoder["<|endoftext|>"]
+#     text_ids = [sot_token] + tokenizer.encode(caption)
+#     if len(text_ids) > text_length:
+#          # 如果允许截断，则调整序列长度，确保末尾是结束令牌
+#         if truncate:
+#             text_ids = text_ids[:text_length]
+#             text_ids[-1] = eot_token
+#         else:
+#              # 如果不允许截断，则抛出异常
+#             raise RuntimeError(
+#                 f"Input {caption} is too long for context length {text_length}"
+#             )
+    
+#     text = tokenizer.decode(text_ids)
+#     doc = nlp(text)
+#     attribute_mask = torch.zeros(text_length)
+    
+#     text_words=text.split()
+
+#     idx_words=0
+#     char_count=0
+
+#     count=1
+#     for chunk in doc.noun_chunks:
+#         pos=[]
+#         adj_founded=False # just to be sure
+#         for tok in chunk:
+#             if tok.pos_ == "NOUN":
+#                 # noun = tok.text
+#                 #manage she's to be split in she is
+#                 while (char_count<=tok.idx and tok.idx<=char_count+len(text_words[idx_words]))==False:
+#                     char_count+=len(text_words[idx_words])+1
+#                     idx_words+=1
+#                 pos.append(idx_words+1) # +1 to account for [CLS]
+#             if tok.pos_ == "ADJ":
+#                 adj_founded=True
+#                 while (char_count<=tok.idx and tok.idx<=char_count+len(text_words[idx_words]))==False:
+#                     char_count+=len(text_words[idx_words])+1
+#                     idx_words+=1
+#                 pos.append(idx_words+1) # +1 to account for [CLS]
+                
+#         if len(pos)>1 and adj_founded:
+#             attribute_mask[pos]=count
+#             count+=1
+#     return attribute_mask
 
 def extract_attributes(caption):
     # 定义语法规则
